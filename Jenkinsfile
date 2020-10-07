@@ -12,7 +12,7 @@ pipeline {
       sh "terraform apply -var-file=dev.tfvars -auto-approve"
      }
    }
-  stage('terraform init and apply prod'){
+   stage('terraform init and apply prod'){
      steps{
       sh returnStatus: true, script: 'terraform workspace new prod'
       sh "terraform init"
