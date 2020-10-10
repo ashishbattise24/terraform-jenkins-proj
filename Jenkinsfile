@@ -4,6 +4,7 @@ pipeline {
   environment {
   PATH = "${PATH}:${terraformPath()}"
 }
+  
 
   stages{
     stage('S3 - create bucket'){
