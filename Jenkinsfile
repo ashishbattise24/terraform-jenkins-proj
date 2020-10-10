@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-  PATH = "${PATH}:${terraformPath()}"
+   PATH = "${PATH}:${getTerraformPath()}"
 }
 
   stages {
@@ -14,7 +14,7 @@ pipeline {
        }
     }*/ 
   
-  stage('terraform init and apply -dev'){
+    stage('terraform init and apply -dev'){
      steps{
       sh returnStatus: true, script: 'terraform workspace new dev'
       sh "terraform init"
@@ -22,7 +22,7 @@ pipeline {
      }
    }
 
-   stage('terraform init and apply prod'){
+    stage('terraform init and apply prod'){
      steps{
       sh returnStatus: true, script: 'terraform workspace new prod'
       sh "terraform init"
