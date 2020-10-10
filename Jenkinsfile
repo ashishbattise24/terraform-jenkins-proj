@@ -19,14 +19,14 @@ pipeline {
       sh returnStatus: true, script: 'terraform workspace new dev'
       sh "terraform init"
       sh "terraform apply -auto-approve"
+     }  
+   }  
    stage('echo statement'){
      steps{
        script{
          sh script: 'echo "This is Dev workspace'
          }
-       }  
-   } 
-    }
+     }
    }
 
    stage('terraform init and apply prod'){
