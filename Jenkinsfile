@@ -20,7 +20,7 @@ pipeline {
       sh "terraform init"
       sh "terraform apply -auto-approve"
        script{
-         sh script: 'echo "This is Dev workspace""'
+         sh script: 'echo "This is Dev workspace'
        }
      }
    }
