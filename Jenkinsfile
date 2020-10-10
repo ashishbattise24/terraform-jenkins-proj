@@ -10,7 +10,7 @@ pipeline {
     stage('S3 - create bucket'){
       steps{
         script{
-             createS3bucket('myt123')
+             createS3bucket('myt123ash')
          }
        } 
     } 
