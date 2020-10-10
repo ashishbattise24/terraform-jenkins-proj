@@ -6,6 +6,13 @@ pipeline {
 }
 */
   stages {
+    stage("create bucket"){
+      steps{
+        script{
+             getTerraformPath('mytesst123')       
+         }
+       }
+    } 
    stage('terraform init and apply -dev'){
      steps{
       sh returnStatus: true, script: 'terraform workspace new dev'
@@ -29,8 +36,8 @@ def createS3Bucket(bcuketName) {
   sh returnStatus: true, script: "aws s3 mb ${bucketName} --region=ap-southeast-1"
 }
 
-def terraformPath(){
+def getTerraformPath(){
  def tfHome = tool name: 'terraform-12', type: 'terraform'
  return tfHome
 }
-*/
+
