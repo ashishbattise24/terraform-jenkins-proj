@@ -42,7 +42,7 @@ def terraformPath(){
  return tfHome
 }
 
-def createS3bucket('bucketName'){
+def createS3bucket(bucketName){
   sh returnStatus: true, script: "aws s3 mb ${bucketName} --region=ap-southeast-1"
 }
 
