@@ -5,8 +5,8 @@ pipeline {
   PATH = "${PATH}:${terraformPath()}"
 }
 
-  stages {
-    stage{
+  stages{
+    stage('S3 - create bucket'){
       steps{
         script{
              createS3bucket('mytesst123')
