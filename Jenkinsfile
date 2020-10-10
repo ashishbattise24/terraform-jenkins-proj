@@ -11,7 +11,7 @@ pipeline {
         script{
              createS3bucket('mytesst123')
          }
-       }
+       } 
     } 
    stage('terraform init and apply -dev'){
      steps{
@@ -44,5 +44,5 @@ def terraformPath(){
 
 def createS3bucket(bucketName){
   sh returnStatus: true, script: "aws s3 mb ${bucketName} --region=ap-southeast-1"
-}
+} 
 
