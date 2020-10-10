@@ -1,10 +1,10 @@
 pipeline {
   agent any
-/*
+
   environment {
-  PATH = "${PATH}:${terraformPath()}"
+  PATH = "${PATH}:${getTerraformPath()}"
 }
-*/
+
   stages {
     stage("create bucket"){
       steps{
