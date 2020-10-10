@@ -31,7 +31,7 @@ pipeline {
    }
 
 } 
-}
+
 /*
 def createS3Bucket(bcuketName) {
   
