@@ -24,7 +24,7 @@ pipeline {
    stage('echo statement'){
      steps{
        script{
-         sh script: 'echo "This is Dev workspace'
+         sh script: 'echo "This is Dev workspace"'
          }
      }
    }
