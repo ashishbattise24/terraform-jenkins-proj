@@ -9,7 +9,7 @@ pipeline {
     stage{
       steps{
         script{
-             terraformPath('mytesst123')
+             createS3bucket('mytesst123')
          }
        }
     } 
