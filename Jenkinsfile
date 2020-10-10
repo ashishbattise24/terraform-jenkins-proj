@@ -4,16 +4,16 @@ pipeline {
   environment {
   PATH = "${PATH}:${terraformPath()}"
 }
-/*
+
   stages {
-    stage("create bucket"){
+   /* stage("create bucket"){
       steps{
         script{
              terraformPath('mytesst123')       
          }
        }
-    } 
-  */
+    }*/ 
+  
   stage('terraform init and apply -dev'){
      steps{
       sh returnStatus: true, script: 'terraform workspace new dev'
