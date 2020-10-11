@@ -18,7 +18,7 @@ pipeline {
      steps{
       sh returnStatus: true, script: 'terraform workspace new dev'
       sh "terraform init"
-      sh "terraform apply -auto-approve"
+      sh "ansible-playbook terraform-bucket.yml"
      }  
    }  
    stage('echo statement'){
@@ -34,9 +34,7 @@ pipeline {
       sh returnStatus: true, script: 'terraform workspace new prod'
       sh "terraform init"
 
-      sh "terraform apply  -auto-approve"
-
-      sh "terraform apply -auto-approve"
+      sh "ansible-playbook terraform-bucket.yml -e app-env=prod"
 
      }
    }
