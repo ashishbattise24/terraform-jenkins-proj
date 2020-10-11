@@ -1,0 +1,20 @@
+---
+ - hosts: localhost
+   gather_facts: false
+   vars:
+    state: present
+    s3_bucket: broc123
+    key: terraform.tfstate
+    region: ap-southeast-1
+    app_env: dev
+   tasks:
+   - name: create bucket
+     terraform:
+     project_path: "./"
+     state: "{{ state }}"
+     backend_config:
+      region: "{{region}}"
+      bucket: "{{s3_bucket}}"
+      key: "{{key}}"
+     variables-file: "{{app_env}}.tfvars"
+     workspace: {{app_env}}
