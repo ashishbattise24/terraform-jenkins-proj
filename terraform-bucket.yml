@@ -17,4 +17,4 @@
       bucket: "{{s3_bucket}}"
       key: "{{key}}"
      variables-file: "{{app_env}}.tfvars"
-     workspace: {{app_env}}
+     workspace: "{{app_env}}"
