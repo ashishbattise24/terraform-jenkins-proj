@@ -10,5 +10,5 @@
        state: present
    - name: create s3 bucket
      s3_bucket:
-         name: 
+         name: broc123
          state: present
